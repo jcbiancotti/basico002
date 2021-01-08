@@ -1,0 +1,46 @@
+<div class="container p-4">
+    <div class="botones text-right p-3">
+        <a class="btn btn-primary" href="/usuarios/add">Agrega un nuevo usuario <i class="fa fa-user-plus"></i></a>
+        <a class="btn btn-secondary" href="/usuarios/informe">Obten un listado <i class="fa fa-file-text-o"></i></a>
+    </div>
+    <table class="table table-hover">
+        <thead class="thead-light">
+            <th scope="col">#</th>
+            <th scope="col">Nombre de usuario</th>
+            <th scope="col">Nombre completo</th>
+            <th scope="col">Correo electr&oacute;nico</th>
+            <th scope="col">Tel&eacute;fono m&oacute;vil</th>
+            <th scope="col">Acciones</th>
+        </thead>
+        {{#each usuarios}}
+        <tbody>
+            <th scope="row">
+                <a href="/usuarios/edit/{{clave}}">{{clave}}</a>
+            </th>
+            <td>
+                <a href="/usuarios/edit/{{clave}}">{{nombre}}</a>
+            </td>
+            <td>
+                {{nombre_completo}}
+            </td>
+            <td>
+                {{email}}
+            </td>
+            <td>
+                {{telefono_movil}}
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/usuarios/delete/{{clave}}"><i class="fa fa-trash"></i></a>
+                <a class="btn btn-secondary" href="/usuarios/edit/{{clave}}">Editar <i class="fa fa-edit"></i></a> 
+            </td>
+        </tbody>
+        {{else}}
+            <div class="col-md-4 mx-auto">
+                <div class="card card-body text-center">
+                    <p>A&uacute;n no hay usuarios creados</p>
+                    <a href="/usuarios/add">Crea alguno</a>
+                </div>
+            </div>
+        {{/each}}
+    </table>
+</div>

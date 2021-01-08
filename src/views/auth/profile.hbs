@@ -1,0 +1,49 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+
+            <div class="card">
+                <div class="card-header">
+                    <h3>Tu perfil</h3>
+                </div>
+            <div class="card-body">
+
+          <form action="/profile/{{user.clave}}" method="POST">
+
+            {{!-- Campos --}}
+            <div class="form-group"> 
+              <input type="text" name="nombre" placeholder="Nombre de usuario" class="form-control" value={{user.nombre}} readonly>
+            </div>
+            <div class="form-group">
+              <input type="type" name="nombre_completo" placeholder="Nombre completo" class="form-control" value="{{user.nombre_completo}}">
+            </div>
+            <div class="form-group">
+              <input type="text" name="email" placeholder="Correo electr&oacute;nico" class="form-control" value={{user.email}}>
+            </div>
+            <div class="form-group">
+              <input type="text" name="telefono_movil" placeholder="Tel&eacute;fono m&oacute;vil" class="form-control" value={{user.telefono_movil}}>
+            </div>
+            <div class="form-group">
+              <label for="es_admin">
+              <input type="checkbox" name="es_admin" id="es_admin" {{user.v_es_admin}}>
+              Es administrador</label>
+            </div>
+            <div class="form-group">
+              <label for="es_admin_grupos"> 
+              <input type="checkbox" name="es_admin_grupos" id="es_admin_grupos" {{user.v_es_admin_grupos}}>
+              Es administrador de grupos</label>
+            </div>
+
+            {{!-- Fin campos --}}
+
+            <div class="form-group">
+                <button class="btn btn-primary btn-block">Guarda los cambios</button>
+                <a href="javascript:history.back()"><i class="fa fa-arrow-circle-o-left"></i> Volver</a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

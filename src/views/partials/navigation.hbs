@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="cabecera navbar-brand" href="/">
+      <img src="/img/alfred-logo-header-sin-fondo.png" alt="Alfred home!">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        {{#if user}}
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+          Alfred
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/usuarios">Gestionar usuarios</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="">opcion 1</a>
+            <a class="dropdown-item" href="">opcion 2</a>
+            <a class="dropdown-item" href="">opcion 3</a>
+            <a class="dropdown-item" href="">opcion 4</a>
+            <a class="dropdown-item" href="">opcion 5</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Tu perfil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Desconecta</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link" href="/signin">Accede</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">Reg&iacute;strate</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
